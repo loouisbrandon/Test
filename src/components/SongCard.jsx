@@ -9,11 +9,13 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
   const dispatch = useDispatch();
 
   const handlePauseClick = () => {
-
+      dispatch(playPause(false));
 
   };
 
   const handlePlayClick = () => {
+    dispatch(setActiveSong({ song, data, i}));
+    dispatch(playPause(true));
 
   };
   
